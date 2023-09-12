@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pokemart-react-other/static/css/main.43e83214.css",
-    "main.js": "/pokemart-react-other/static/js/main.75a37250.js",
+    "main.js": "/pokemart-react-other/static/js/main.f5d778cd.js",
     "index.html": "/pokemart-react-other/index.html",
     "main.43e83214.css.map": "/pokemart-react-other/static/css/main.43e83214.css.map",
-    "main.75a37250.js.map": "/pokemart-react-other/static/js/main.75a37250.js.map"
+    "main.f5d778cd.js.map": "/pokemart-react-other/static/js/main.f5d778cd.js.map"
   },
   "entrypoints": [
     "static/css/main.43e83214.css",
-    "static/js/main.75a37250.js"
+    "static/js/main.f5d778cd.js"
   ]
 }
