@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#header {
+  background-color: rgba(var(--bs-tertiary-bg-rgb),var(--bs-bg-opacity)) !important;
+}
+
+#sidebar {
+  position: fixed;
+  width: 100;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+#content {
+  margin-left: 200px;
+  margin-right: 20px;
+}
+
+.card {
+
+}
+
+.product:hover .cardImage {
+  animation: jump 2s ease-in-out infinite;
+}
+
+#headerImage {
+  animation: spin 4s linear infinite;
+}
+
+#loadMore {
+  visibility: visible;
+}
+
+#loadMore:hover > #loadMoreImage {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {transform:rotate(360deg);}
+  to {transform:rotate(0deg);}
+}
+
+@keyframes jump {
+  0% {
+    transform:rotate(45deg);
+  }
+  50% {
+    transform:rotate(-45deg);
+  }
+  100% {
+    transform:rotate(45deg);
+  }
+}
