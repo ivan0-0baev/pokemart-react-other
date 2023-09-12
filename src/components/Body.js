@@ -52,7 +52,7 @@ const Body = ({ priceRange }) => {
                                                     View
                                                 </button>
                                             </div>
-                                            <small className="text-body-secondary"><img className="cardImage" src={item.img} width="100%" height="50"/></small>
+                                            <small className="text-body-secondary"><img className="cardImage" src={process.env.PUBLIC_URL + item.img} width="100%" height="50"/></small>
                                         </div>
                                     </div>
                                 </div>
