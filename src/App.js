@@ -11,7 +11,7 @@ function App() {
   const [priceRange, setPriceRange] = useState({ min: 0, max: 10000 })
   const [orderAlphabetical, setOrderAlphabetical] = useState(0);
   const [orderPrice, setOrderPrice] = useState(0);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(["All"]);
 
   return (
     <div>

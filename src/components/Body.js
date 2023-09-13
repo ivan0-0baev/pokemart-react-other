@@ -17,9 +17,6 @@ const Body = ({ priceRange, orderAlphabetical, orderPrice, categories }) => {
         setItems([])
         for (let i = 0; i < categories.length; i++) {
             switch (categories[i]){
-                case "All":
-                    setItems(all);
-                    break;
                 case "Pokeball":
                     setItems(prevState => [...prevState, ...pokeballs]);
                     break;
@@ -31,7 +28,13 @@ const Body = ({ priceRange, orderAlphabetical, orderPrice, categories }) => {
                     break;    
                 case "TM":
                     setItems(prevState => [...prevState, ...tms]);
+                    break;
+                case "All":
+                    setItems(all);
+                    i = categories.length;
                     break; 
+                default:
+                    break;
             }
         }
     }, [categories])
