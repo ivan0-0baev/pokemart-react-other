@@ -1,9 +1,10 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import data from "../data.json"
 
-const Body = ({ priceRange }) => {
+const Body = ({ priceRange, orderAlphabetical, orderPrice, categories }) => {
 
     const [numElements, setNumElements] = useState(3)
+    const [items, setItems] = useState([])
 
     const pokeballs = data.products[0].pokeballs
     const potions = data.products[1].potions
@@ -11,11 +12,44 @@ const Body = ({ priceRange }) => {
     const tms = data.products[3].TMs
 
     const all = [].concat(pokeballs, potions, heals, tms)
-    var item = []
 
-    item = all;
+    useEffect(() => {
+        setItems([])
+        for (let i = 0; i < categories.length; i++) {
+            switch (categories[i]){
+                case "All":
+                    setItems(all);
+                    break;
+                case "Pokeball":
+                    setItems(prevState => [...prevState, ...pokeballs]);
+                    break;
+                case "Potion":
+                    setItems(prevState => [...prevState, ...potions]);
+                    break; 
+                case "Heal":
+                    setItems(prevState => [...prevState, ...heals]);
+                    break;    
+                case "TM":
+                    setItems(prevState => [...prevState, ...tms]);
+                    break; 
+            }
+        }
+    }, [categories])
+    
 
-    const slice = item.slice(0, numElements)
+    if (orderAlphabetical === 0) {
+        items.sort((a, b) => a.name > b.name ? 1 : -1);
+    } else if (orderAlphabetical === 1) {
+        items.sort((a, b) => a.name > b.name ? -1 : 1)
+    }
+
+    if (orderPrice === 0) {
+        items.sort((a, b) => a.cost - b.cost);
+    } else if (orderPrice === 1) {
+        items.sort((a, b) => b.cost - a.cost);
+    }
+
+    const slice = items.slice(0, numElements)
                     .filter(obj => obj.cost >= priceRange.min)
                     .filter(obj => obj.cost <= priceRange.max);
 

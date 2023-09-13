@@ -27,7 +27,7 @@
 }
 
 .product:hover .cardImage {
-  animation: jump 2s ease-in-out infinite;
+  animation: swing 2s ease-in-out infinite;
 }
 
 #headerImage {
@@ -42,12 +42,16 @@
   animation: spin 1s linear infinite;
 }
 
+.badge:hover {
+  animation: jump 1.5s ease-out infinite;
+}
+
 @keyframes spin {
   from {transform:rotate(360deg);}
   to {transform:rotate(0deg);}
 }
 
-@keyframes jump {
+@keyframes swing {
   0% {
     transform:rotate(45deg);
   }
@@ -56,5 +60,20 @@
   }
   100% {
     transform:rotate(45deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
